@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --primary-purple: #6c5ce7;
+  --vogue-black: #1a1a1a;
+  --bg-soft: #f0f2f5;
+  --glass: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: var(--primary-purple); border-radius: 10px; }
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1f9 100%);
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+  color: #2d3436;
+}
+
+.app-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+header { text-align: center; padding: 60px 0; }
+header h1 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 4.5rem; 
+  font-style: italic; 
+  margin: 0;
+  background: linear-gradient(to right, #000, var(--primary-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; }
+
+/* Fixed Input Visibility */
+input, textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  background: white !important;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: #000 !important; /* Visible text while typing */
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Post Cards */
+.post-card {
+  background: var(--glass);
+  backdrop-filter: blur(5px);
+  padding: 35px;
+  margin-bottom: 35px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover { transform: translateY(-8px); }
+
+.post-image-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px 0;
+  background: #eee; /* Placeholder color if image fails */
+}
+
+.outfit-image { width: 100%; height: 100%; object-fit: cover; }
+
+button {
+  background: var(--vogue-black);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+button:hover { background: var(--primary-purple); }
+
+.delete-btn { background: transparent; color: #ccc; float: right; border: none; font-size: 1.2rem; }
+.delete-btn:hover { color: #ff4757; }
+
+/* Sidebar */
+.sidebar {
+  background: var(--glass);
+  padding: 40px;
+  border-radius: 24px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
